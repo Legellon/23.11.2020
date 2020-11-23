@@ -1,3 +1,17 @@
+<?php
+require_once "moduls/connect.php";
+
+if(empty($_GET['ln'])) {$pageLang='et';}
+else {$pageLang=$_GET['ln'];}
+
+$termsTable = mysqli_query($link, "SELECT * FROM terms WHERE lang='$pageLang'");
+$terms=array();
+
+while($oneTerm = mysqli_fetch_assoc($termsTable))
+{
+  $terms[$oneTerm['code']] = $oneTerm['termText'];
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html lang="en">
 
