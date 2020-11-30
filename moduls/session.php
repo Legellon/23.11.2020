@@ -47,7 +47,17 @@ if(isset($_SESSION['nechto'])) {
         if (count($_SESSION['nechto']) > 0) {
           $i = 1;
           foreach ($_SESSION['nechto'] as $kei => $value) {
-            echo "<tr><td>$i</td><td>".$value."</td><td></td><td></td></tr>";
+            echo "<tr><td>$i</td><td>".$value."</td><td></td><td>
+            <form method='post' action='' style='display:inline-block;'>
+            <input type='submit' value='-' />
+            </form>
+            <form method='post' action='' style='display:inline-block;'>
+            <input type='submit' value='-' />
+            </form>
+            <form method='post' action='' style='display:inline-block;'>
+            <input type='image' src='images/1.webp' style='height:20px; padding:15px 0 0 0;'/>
+            </form>
+            </td></tr>";
             $i++;
           }
         }
