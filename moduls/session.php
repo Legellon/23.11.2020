@@ -80,6 +80,7 @@ if(isset($_SESSION['nechto'])) {
       foreach ($_SESSION['nechto'] as $kei => $value) {
         $name = $value['name'];
         $count = $value['count'];
+        $sqlRes = mysql_fetch_assoc(mysqli_query("SELECT price FROM products WHERE code='$name'"));
         echo "<tr><td>$i</td><td>$name</td><td>$count</td><td>
         <form method='post' action='' style='display:inline-block;'>
         <input type='hidden' value='$kei' name='itemMinus' />
